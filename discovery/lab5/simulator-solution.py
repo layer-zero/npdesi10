@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-"""NPDESI lab 5 task 3: Analyzing and Troubleshooting a Script"""
+"""NPDESI discovery lab 5 task 3: Analyzing and Troubleshooting a Script"""
 
 def print_facts(facts):
     """Print two facts from facts dictionary

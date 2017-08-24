@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-"""NPDESI lab 5 task 2: Writing a Network Script"""
+"""NPDESI discovery lab 5 task 2: Writing a Network Script"""
 
 if __name__ == '__main__':
 	facts_1 = {'os': '7.2', 'fqdn': 'cisco.com', 'location': 'sjc', 'vlans_list': [1,5,10], 'neighbors': ['sw2', 'sw3']}
