@@ -1,0 +1,61 @@
+module npdesi-course {
+
+// NPDESI discovery lab 13 task 1: Validate Device Configurations
+
+  yang-version "1";
+
+  // namespace
+  namespace "http://npdesi.cisco.com/training";
+
+  prefix "npdesi";
+
+  // meta
+  organization "Cisco Inc.";
+
+  contact
+    "chuck@npdesi.com";
+
+  description
+    "Here is a module that is used for basic switch configuration";
+
+  revision "2017-05-03" {
+    description "Initial Revision";
+    reference "NPDESI COURSE MODULE";
+  }
+
+  container system {
+    description "System container.";
+
+    leaf hostname {
+      type string;
+      description "System hostname";
+    }
+
+    leaf-list dns-servers {
+      type string;
+      description "DNS servers";
+    }
+
+  }
+
+  container vlans {
+    description "VLAN container";
+    list vlan {
+      description "VLANs";
+      key "vlanid";
+
+      leaf vlanid {
+        type uint16 {
+          range "1 .. 4096";
+        }
+        description "VLAN number";
+      }
+
+      leaf name {
+        type string;
+        description "VLAN name";
+      } 
+    }
+  }
+
+}
