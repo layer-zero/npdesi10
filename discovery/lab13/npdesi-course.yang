@@ -41,8 +41,8 @@ module npdesi-course {
   container vlans {
     description "VLAN container";
     list vlan {
-      description "VLANs";
       key "vlanid";
+      description "VLANs";
 
       leaf vlanid {
         type uint16 {
