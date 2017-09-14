@@ -8,7 +8,7 @@ requests.packages.urllib3.disable_warnings()
 
 def main():
     auth = requests.auth.HTTPBasicAuth('cisco', 'cisco')
-    url = 'https://asa/api/objects/networkservicegroups/ssh-alt'
+    url = 'https://asa/api/objects/networkservices/ssh-alt'
     response = requests.delete(url, verify=False, auth=auth)
     print 'Status Code: ' + str(response.status_code)
     if response.text:
