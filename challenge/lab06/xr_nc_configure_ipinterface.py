@@ -11,7 +11,6 @@ if __name__ == "__main__":
                          hostkey_verify=False, device_params={'name': 'iosxr'},
                          allow_agent=False, look_for_keys=False) as device:
 
-
         nc_filter = """
             <config xmlns:xc="urn:ietf:params:xml:ns:netconf:base:1.0">
               <interface-configurations xmlns="http://cisco.com/ns/yang/Cisco-IOS-XR-ifmgr-cfg">
@@ -29,7 +28,7 @@ if __name__ == "__main__":
                 </ipv4-network>
                </interface-configuration>
                <interface-configuration>
-                <shutdown xc:operation="delete"/> 
+                <shutdown xc:operation="delete"/>
                 <active>act</active>
                 <interface-name>GigabitEthernet0/0/0/0</interface-name>
                 <ipv4-network xmlns="http://cisco.com/ns/yang/Cisco-IOS-XR-ipv4-io-cfg">
@@ -51,6 +50,11 @@ if __name__ == "__main__":
             </config>
         """
 
+        """ The line <shutdown xc:operation="delete"/> will perform a "no shut" of the interface if it is down.
+            However, it will throw an error if the interface was already up.
+            It would be better to first check for interface admin state and then perform a no shut with a new request as needed.
+        """
+
         nc_reply = device.edit_config(target='candidate', config=nc_filter)
         print nc_reply
         device.commit()
@@ -62,5 +66,3 @@ if __name__ == "__main__":
 
         nc_get_reply = device.get(('subtree', get_filter))
         print nc_get_reply
-
-
