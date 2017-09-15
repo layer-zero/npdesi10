@@ -50,7 +50,7 @@ if __name__ == "__main__":
                     <name>200</name>
                 </Loopback>
             </interface>
-        </native
+        </native>
         """
         nc_get_reply = device.get(('subtree', get_filter))
         print etree.tostring(nc_get_reply.data_ele, pretty_print=True)
