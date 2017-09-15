@@ -11,7 +11,6 @@ if __name__ == "__main__":
                          hostkey_verify=False, device_params={'name': 'csr'},
                          allow_agent=False, look_for_keys=False) as device:
 
-
         nc_filter = """
                 <config>
                 <native xmlns="http://cisco.com/ns/yang/ned/ios">
@@ -42,11 +41,9 @@ if __name__ == "__main__":
                 </config>
         """
 
-        nc_reply = device.edit_config(target='running', config=nc_filter)
+       nc_reply = device.edit_config(target='running', config=nc_filter)
 
-        # UNCOMMENT THE NEXT TWO LINES FOR THE LAB AFTER YOU
-        # GET THE NEW SECONDARY IP WORKING
-        get_filter = """
+       get_filter = """
         <native xmlns="http://cisco.com/ns/yang/ned/ios">
             <interface>
                 <Loopback>
