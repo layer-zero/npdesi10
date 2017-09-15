@@ -44,13 +44,6 @@ if __name__ == "__main__":
 
         nc_reply = device.edit_config(target='running', config=nc_filter)
 
-        get_filter = """
-            <native xmlns="http://cisco.com/ns/yang/ned/ios">
-                INSERT CORRECT
-                FILTER HERE
-            </native>
-        """
-
         # UNCOMMENT THE NEXT TWO LINES FOR THE LAB AFTER YOU
         # GET THE NEW SECONDARY IP WORKING
         get_filter = """
