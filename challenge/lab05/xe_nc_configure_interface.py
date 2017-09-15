@@ -41,9 +41,9 @@ if __name__ == "__main__":
                 </config>
         """
 
-       nc_reply = device.edit_config(target='running', config=nc_filter)
+        nc_reply = device.edit_config(target='running', config=nc_filter)
 
-       get_filter = """
+        get_filter = """
         <native xmlns="http://cisco.com/ns/yang/ned/ios">
             <interface>
                 <Loopback>
