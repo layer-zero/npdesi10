@@ -43,12 +43,10 @@ primary_ip = interface_config.ipv4_network.addresses.Primary()
 primary_ip.address = '10.23.23.1'
 primary_ip.netmask = '255.255.255.0'
 interface_config.ipv4_network.addresses.primary = primary_ip
-secondary_ips = interface_config.ipv4_network.addresses.Secondaries()
-secondary_ip = secondary_ips.Secondary()
+secondary_ip = interface_config.ipv4_network.addresses.secondaries.Secondary()
 secondary_ip.address = '10.32.32.1'
 secondary_ip.netmask = '255.255.255.0'
-secondary_ips.secondary.append(secondary_ip)
-interface_config.ipv4_network.addresses.secondaries = secondary_ips
+interface_config.ipv4_network.addresses.secondaries.secondary.append(secondary_ip)
 
 ifcfg.interface_configuration.append(interface_config)
 # This adds configuration for the second interface in a similar manner.
