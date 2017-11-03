@@ -11,7 +11,7 @@ from ydk.services import CRUDService
 from ydk.providers import NetconfServiceProvider
 from ydk.models.cisco_ios_xr import Cisco_IOS_XR_ifmgr_cfg
 
-provider = NetconfServiceProvider(address='172.16.1.14', port=830, username="cisco", password="cisco", protocol="ssh")
+provider = NetconfServiceProvider(address='xrv', port=830, username="cisco", password="cisco", protocol="ssh")
 crud = CRUDService()
 
 ifcfg = Cisco_IOS_XR_ifmgr_cfg.InterfaceConfigurations()
